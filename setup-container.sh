@@ -35,8 +35,8 @@ function start_container() {
         --file "${base_dir}/Dockerfile" \
         "${TEMP_DIR}"
     docker run -d -p 127.0.0.1:2222:22 --name "${NAME}" "compute-node-sim"
-    CONTAINER_ADDR=$(docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' "${NAME}")
-    export CONTAINER_ADDR
+    #CONTAINER_ADDR=$(docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' "${NAME}")
+    #export CONTAINER_ADDR
 }
 
 function setup_test_inventory() {
